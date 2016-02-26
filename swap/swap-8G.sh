@@ -1,3 +1,4 @@
+#!/bin/sh
 cd /var/
 ## 建立交换区
 dd if=/dev/zero of=swapfile bs=1024 count=8192000
