@@ -2,7 +2,9 @@
 
     基本上都是基于CentOS系统
 
-#### [Swap(可以理解为虚拟内存)脚本](https://github.com/cavacn/Growth-notes/tree/master/swap)
+#### [Axel-2.4.1(多线程下载工具)脚本](./axel)
+
+#### [Swap(可以理解为虚拟内存)脚本](./swap)
 
 #### [Mongodb 集群](https://github.com/cavacn/Growth-notes/issues/1)
 
