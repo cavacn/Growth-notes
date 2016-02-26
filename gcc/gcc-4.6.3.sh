@@ -20,16 +20,19 @@ tar -xvf ../cavacn-download/mpfr-2.4.2.tar.gz
 # 编译安装gmp
 cd gmp-5.0.1
 ./configure --perfix=/usr/local/gmp-5.0.1
+make
 make install
 
 # 编译安装mpfr
 cd ../mpfr-2.4.2
 ./configure --prefix=/usr/local/mpfr-2.4.2 --with-gmp=/usr/local/gmp-5.0.1/
+make
 make install
 
 # 编译安装mpc
 cd ../mpc-1.0.1
 ./configure --prefix=/usr/local/mpc-1.0.1 --with-gmp=/usr/local/gmp-5.0.1/ --with-mpfr=/usr/local/mpfr-2.4.2/
+make
 make install
 
 # 编译安装gcc
