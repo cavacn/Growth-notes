@@ -2,6 +2,8 @@
 
     基本上都是基于CentOS系统
 
+#### [Swap(可以理解为虚拟内存)脚本](https://github.com/cavacn/Growth-notes/tree/master/swap)
+
 #### [Mongodb 集群](https://github.com/cavacn/Growth-notes/issues/1)
 
 #### [Elasticsearch 搭建](https://github.com/cavacn/Growth-notes/issues/2)
