@@ -6,6 +6,8 @@
 
 #### [Swap(可以理解为虚拟内存)脚本](./swap)
 
+#### [gcc安装](./gcc)
+
 #### [Mongodb 集群](https://github.com/cavacn/Growth-notes/issues/1)
 
 #### [Elasticsearch 搭建](https://github.com/cavacn/Growth-notes/issues/2)
