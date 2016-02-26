@@ -6,7 +6,9 @@
 
 #### [Swap(可以理解为虚拟内存)脚本](./swap)
 
-#### [gcc安装](./gcc)
+#### [Gcc安装](./gcc)
+
+#### [Cmake安装](./cmake)
 
 #### [Mongodb 集群](https://github.com/cavacn/Growth-notes/issues/1)
 
