@@ -14,4 +14,4 @@
 
     安装要等待很久~~因为是从源码编译安装的。。。所以~~~咳咳，大概也就几个小时吧
 
-#### [ISUSE](https://github.com/cavacn/Growth-notes/issues/5)
+#### [ISSUSE](https://github.com/cavacn/Growth-notes/issues/5)

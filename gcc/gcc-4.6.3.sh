@@ -36,6 +36,7 @@ function download(){
   # echo $filename"======"$tmpfile
   if [ ! -f "${tmpfile}" ];then
     # echo "begin-download==>"$1
+    echo ${tmpfile}"不存在"
     echo "开始下载:"$1
     wget $1 2>wget.log
     wgetCode=$?
