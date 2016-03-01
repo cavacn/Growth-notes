@@ -123,7 +123,8 @@ function gcc(){
   cd $distdir"/"${gcc_version}
   echo "正在执行(gcc)"$distdir"/"${gcc_version}
   echo "设置环境变量:LD_LIBRARY_PATH"
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$gmp_local/lib:$mpc_local/lib:$mpfr_local/lib
+  echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${gmp_local}/lib:${mpc_local}/lib:${mpfr_local}/lib >> ~/.bashrc
+  source ~/.bashrc
   echo "yum install glibc-devel.i686"
   yum install glibc-devel.i686 -y 2>yum.err 1>yum.log
   echo "./configure"
@@ -134,9 +135,13 @@ function gcc(){
   make install 2>install.err 1>install.log
   installErr=`cat install.err`
   if [ "$installErr"x != ""x ];then
-    echo "MPFR安装失败:"$installErr
+    echo "GCC安装失败:"$installErr
     exit
   fi
+  mv /usr/bin/gcc /usr/bin/gcc.backup
+  mv /usr/bin/cc /usr/bin/cc
+  ln -s ${gcc_local} /usr/bin/gcc
+  ln -s ${gcc_local} /usr/bin/cc
   echo "安装完毕:"${gcc_version}
 }
 
