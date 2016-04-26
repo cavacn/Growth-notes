@@ -13,3 +13,7 @@
 #### [Mongodb 集群](https://github.com/cavacn/Growth-notes/issues/1)
 
 #### [Elasticsearch 搭建](https://github.com/cavacn/Growth-notes/issues/2)
+
+#### [Hadoop](./hadoop)
+
+> [免密码登录](https://github.com/cavacn/Growth-notes/blob/master/hadoop/noPasswordLogin.sh)
