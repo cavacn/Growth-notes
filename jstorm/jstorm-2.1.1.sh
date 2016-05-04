@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 _basedir=~
-_version="2.1.1"
-_jstorm="jstorm-$_version"
+_version="jstorm-2.1.1"
 _download="$_basedir/download"
-_url="https://github.com/alibaba/jstorm/archive/$_version.tar.gz"
+# _url="https://github.com/alibaba/jstorm/archive/$_version.tar.gz"
+_url="http://42.121.19.155/jstorm/$_version.zip"
 
 # 检查文件
 function _check(){
@@ -19,7 +19,7 @@ function _check(){
 # 下载文件
 function _download(){
   _url=$1
-  _filename=$_download${_url##*/}
+  _filename=$_download/${_url##*/}
   if [ ! -f "${_filename}" ];then
     echo "${_filename}:不存在"
     echo "开始下载：$_url"
@@ -30,16 +30,34 @@ function _download(){
 }
 # 解压文件
 function _tar(){
-  _filename=$_download${1##*/}
+  _filename=$_download/${1##*/}
   rm -rf "$_basedir/$_version"
-  echo "正在解压:$_filename -> $_basedir/$_jstorm"
-  tar -xvf $_filename -C $_basedir 1>/dev/null 2>&1
-  echo "解压完成: $_basedir/$_jstorm"
+  echo "正在解压:$_filename -> $_basedir/$_version"
+  unzip $_filename -d $_basedir 1>/dev/null 2>&1
+  echo "解压完成: $_basedir/$_version"
 }
 
-_check $_jstorm
+_check $_version
 _ckNum=$?
 if [ $_ckNum -eq 0 ];then
   _download $_url
   _tar $_url
 fi
+
+echo "开始部署服务器咯~"
+echo "我这里准备了一些默认配置放在 ./conf/ 目录下面，根据你自己的需求，修改配置文件"
+cp -r ./conf/ $_basedir/$_version/
+echo "开始分发代码~~ =.="
+while [[ true ]]; do
+  #statements
+  echo -n "请输入主机名:(host/n):"
+  read _hostname
+  if [[ "n"x == "$_hostname"x ]]; then
+    #statements
+    echo "结束懒人Jstorm"
+    break
+  fi
+  echo "开始分发Jstorm -> $_hostname"
+  scp -r $_basedir/$_version $_hostname:$_basedir/$_version 1>/dev/null 2>&1
+  echo "$_hostname:分发已完成"
+done
