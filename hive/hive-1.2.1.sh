@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-_version="apache-hive-2.0.0-bin"
+_version="apache-hive-1.2.1-bin"
 _basedir=~
 _download="$_basedir/download/"
-_url="http://mirrors.cnnic.cn/apache/hive/hive-2.0.0/$_version.tar.gz"
+_url="http://mirrors.cnnic.cn/apache/hive/hive-1.2.1/$_version.tar.gz"
 # 检查文件
 function _check(){
   _tmp="${_basedir}/$1"
@@ -52,10 +52,10 @@ while [[ true ]]; do
   read _hostname
   if [[ "n"x == "$_hostname"x ]]; then
     #statements
-    echo "结束懒人Hbase"
+    echo "结束懒人Hive"
     break
   fi
-  echo "开始分发Hbase -> $_hostname"
+  echo "开始分发Hive -> $_hostname"
   scp -r $_basedir/$_version $_hostname:$_basedir/$_version 1>/dev/null 2>&1
   echo "$_hostname:分发已完成"
 done
